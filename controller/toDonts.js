@@ -30,8 +30,6 @@ router.get('/:id', (req, rex) => {
     }
 });
 
-
-
 /***********************UPDATE DATA *****************/
 router.get('/:id/edit', (req, res) => {
     res.render('toDonts/edit', {
@@ -51,9 +49,9 @@ router.put('/:id', function(req, res){
     res.redirect('/toDonts');
 });
 
-/***********************DELETE   *****************/
+/***********************DELETE*****************/
 router.delete('/:id', function(req, res){
-    data.seededToDonts.splice(req.params.id, 1);
+    data.seededToDonts.splice(parseInt(req.params.id), 1);
     //removes item from array
     res.redirect('/toDonts');
     //direct back to index 
